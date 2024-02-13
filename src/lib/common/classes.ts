@@ -3,12 +3,15 @@ export class Device {
   public name: string = '';
   public givenName: string = '';
   public lastSeen: string = '';
+  public machineKey: string = ''; //Вроде как уникальный id устройств
+  //public nodeKey: string = '';
+  //public discoKey: string = '';
   public ipAddresses: string[] = []
   public forcedTags: string[] = []
   public validTags: string[] = []
   public invalidTags: string[] = []
   public user: { name: string } = { name: '' }
-
+  
   public constructor(init?: Partial<Device>) {
     Object.assign(this, init);
   }
