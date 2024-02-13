@@ -6,6 +6,7 @@
 	import MoveDevice from './DeviceCard/MoveDevice.svelte';
 	import RemoveDevice from './DeviceCard/RemoveDevice.svelte';
 	import RenameDevice from './DeviceCard/RenameDevice.svelte';
+	import DeviceIPs from './DeviceCard/DeviceIPs.svelte';
 
 	export let device = new Device();
 	let cardExpanded = false;
@@ -58,13 +59,14 @@
 </script>
 
 <div class="card-primary">
-	<div on:keypress on:click={() => (cardExpanded = !cardExpanded)} class="flex">
+	<div on:keypress on:click={() => (cardExpanded = !cardExpanded)} role="button" tabindex="0" class="flex">
 		<span class="min-w-64 w-1/2 font-bold">
 			{#if cardEditing == false}
 				<span class="badge badge-xs tooltip {timeDifference(new Date(device.lastSeen))}" data-tip={timeSince(new Date(device.lastSeen))} /> {device.id}: {device.givenName}
 			{/if}
 			<RenameDevice bind:cardEditing {device} />
 		</span>
+		<div class="grow min-w-fit w-1/2"><DeviceIPs {device} /></div>
 		<div class="grow w-full"><DeviceTags {device} /></div>
 		<div class="grow min-w-fit">
 			<RemoveDevice {device} />

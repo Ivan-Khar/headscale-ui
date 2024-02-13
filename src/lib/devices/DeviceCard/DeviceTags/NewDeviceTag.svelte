@@ -31,14 +31,14 @@
 	on:click|stopPropagation={() => {
 		editingTag = true;
 	}}
-	class="btn btn-xs border-dotted border-2 btn-primary opacity-60 normal-case"
+	class="btn btn-xs border-dotted border-2 btn-secondary opacity-60 normal-case"
 >
 	{#if !editingTag}
 		<span>+ tag</span>
 	{:else}
 		<!-- svelte-ignore a11y-autofocus -->
 		<form on:submit|preventDefault={updateTagsAction}>
-			<input bind:value={newTag} autofocus required class="bg-primary w-16" />
+			<input bind:value={newTag} autofocus required class="bg-secondary w-16" />
 			<button in:fade|global class="ml-1">
 				<!-- checkmark symbol -->
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
