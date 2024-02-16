@@ -47,5 +47,5 @@
 		getAPIKeysAction();
 	}}
 	class="btn btn-sm btn-secondary capitalize ml-4"
-	type="button" disabled="{apiStatus != 'succeeded'}">Rollover API Key</button
+	type="button" disabled="{apiStatus != 'succeeded'}">Перегенерировать ключ</button
 >

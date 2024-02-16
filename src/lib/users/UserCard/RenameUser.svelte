@@ -26,7 +26,7 @@
 					$alertStore = error;
 				});
 		} else {
-			$alertStore = 'Use lower case letters, periods, or dashes only';
+			$alertStore = 'Используйте только латинские маленькие буквы, точки или тире';
 		}
 	}
 </script>

@@ -24,10 +24,12 @@
 		<ServerSettings />
 		<div class="p-4" />
 		<ThemeSettings />
+		<!--
 		<div class="p-4" />
-		<h1 class="text-2xl bold text-primary mb-4">Version</h1>
+		<h1 class="text-2xl bold text-primary mb-4">Версия</h1>
 		<b>insert-version</b>
 		<div class ="p-4"></div>
 		<DevSettings></DevSettings>
+		-->
 	</div>
 </body>

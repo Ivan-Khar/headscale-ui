@@ -38,7 +38,7 @@
 
 <tr>
 	<th>
-		<div>Preauth Keys 
+		<div>Ключи связывания устройств
 			<button
 				on:keypress on:click={() => {
 					newPreAuthKeyShow = !newPreAuthKeyShow;
@@ -66,7 +66,7 @@
 				on:keypress on:click={() => {
 					$preAuthHideStore = !$preAuthHideStore
 				}}
-				class="font-normal ml-2">Hide Expired/Used Keys</span
+				class="font-normal ml-2">Спрятать использованные ключи</span
 			>
 		</div>
 	</th>
@@ -84,21 +84,21 @@
 								><code class="border p-1 rounded">{key.key}</code>
 								<div class="tooltip" data-tip={new Date(key.expiration).toLocaleString()}>
 									{#if new Date(key.expiration).getTime() > new Date().getTime()}
-										<div class="btn btn-xs capitalize bg-success text-success-content mx-1">active</div>
+										<div class="btn btn-xs capitalize bg-success text-success-content mx-1">активный</div>
 									{:else if key.id != ''}
-										<div class="btn btn-xs capitalize bg-error text-error-content mx-1">expired</div>
+										<div class="btn btn-xs capitalize bg-error text-error-content mx-1">истек</div>
 									{/if}
 								</div>
 								{#if !key.used && key.id != ''}
-									<div class="btn btn-xs capitalize bg-primary text-primary-content mx-1">unused</div>
+									<div class="btn btn-xs capitalize bg-primary text-primary-content mx-1">не использован</div>
 								{:else if key.id != ''}
-									<div class="btn btn-xs capitalize bg-warning text-warning-content mx-1">used</div>
+									<div class="btn btn-xs capitalize bg-warning text-warning-content mx-1">использован</div>
 								{/if}
 								{#if key.reusable && key.id != ''}
-									<div class="btn btn-xs capitalize bg-secondary text-secondary-content mx-1">reusable</div>
+									<div class="btn btn-xs capitalize bg-secondary text-secondary-content mx-1">многоразовый</div>
 								{/if}
 								{#if key.ephemeral && key.id != ''}
-									<div class="btn btn-xs capitalize bg-accent text-accent-content mx-1">ephemeral</div>
+									<div class="btn btn-xs capitalize bg-accent text-accent-content mx-1">недолговечный</div>
 								{/if}
 							</td>
 							<td>

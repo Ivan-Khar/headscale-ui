@@ -39,7 +39,7 @@
 				<table class="table table-compact w-full">
 					<tbody>
 						<tr>
-							<th>User Creation Date</th>
+							<th>Пользователь был создан</th>
 							<td>{new Date(user.createdAt)}</td>
 						</tr>
 						{#key $userStore}

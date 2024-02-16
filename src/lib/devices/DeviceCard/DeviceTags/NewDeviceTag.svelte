@@ -34,7 +34,7 @@
 	class="btn btn-xs border-dotted border-2 btn-secondary opacity-60 normal-case"
 >
 	{#if !editingTag}
-		<span>+ tag</span>
+		<span>+</span>
 	{:else}
 		<!-- svelte-ignore a11y-autofocus -->
 		<form on:submit|preventDefault={updateTagsAction}>

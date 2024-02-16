@@ -12,6 +12,14 @@
 	let cardExpanded = false;
 	let cardEditing = false;
 
+	const longTimeString = {
+		calendar: "long",
+		dayPeriod: "long",
+		dateStyle: "long",
+		timeStyle: "long",
+		hourStyle: "long",
+	}
+
 	// returns button colour based on time difference
 	function timeDifference(date: Date) {
 		let currentTime = new Date();
@@ -31,36 +39,24 @@
 		let timeUnit = '';
 
 		if (timeDifference < 60) {
-			timeUnit = 'seconds';
+			timeUnit = 'cек';
 		} else if (timeDifference < 3600) {
 			timeDifference = Math.floor(timeDifference / 60);
-			if (timeDifference == 1) {
-				timeUnit = 'minute';
-			} else {
-				timeUnit = 'minutes';
-			}
+			timeUnit = 'мин';
 		} else if (timeDifference < 86400) {
 			timeDifference = Math.floor(timeDifference / (60 * 60));
-			if (timeDifference == 1) {
-				timeUnit = 'hour';
-			} else {
-				timeUnit = 'hours';
-			}
+			timeUnit = 'ч';
 		} else {
 			timeDifference = Math.floor(timeDifference / (60 * 60 * 24));
-			if (timeDifference == 1) {
-				timeUnit = 'day';
-			} else {
-				timeUnit = 'days';
-			}
+			timeUnit = 'д';
 		}
-		return `Last seen ${timeDifference} ${timeUnit} ago`;
+		return `Последний раз был в сети ${timeDifference} ${timeUnit} назад`;
 	}
 </script>
 
 <div class="card-primary">
 	<div on:keypress on:click={() => (cardExpanded = !cardExpanded)} role="button" tabindex="0" class="flex">
-		<span class="min-w-64 w-1/2 font-bold">
+		<span class="min-w-48 w-1/2 font-bold">
 			{#if cardEditing == false}
 				<span class="badge badge-xs tooltip {timeDifference(new Date(device.lastSeen))}" data-tip={timeSince(new Date(device.lastSeen))} /> {device.id}: {device.givenName}
 			{/if}
@@ -92,11 +88,11 @@
 				<table class="table table-compact w-full">
 					<tbody>
 						<tr>
-							<th>Device Last Seen</th>
-							<td>{new Date(device.lastSeen)}</td>
+							<th>Был в сети</th>
+							<td>{new Date(device.lastSeen).toLocaleString('ru-RU')}</td>
 						</tr>
 						<tr>
-							<th>IP Addresses</th>
+							<th>IP-адреса</th>
 							<td>
 								<ul class="list-disc list-inside">
 									{#each device.ipAddresses as address}
@@ -106,11 +102,11 @@
 							</td>
 						</tr>
 						<tr>
-							<th>Assigned User</th>
+							<th>Пользователь устройства</th>
 							<MoveDevice {device} />
 						</tr>
 						<tr>
-							<th>Device Name</th>
+							<th>Название устройства</th>
 							<td>{device.name}</td>
 						</tr>
 						<tr>

@@ -41,30 +41,30 @@
 		<table class="table table-compact w-full">
 			<tbody>
 				<tr>
-					<th>Expiry:</th>
+					<th>Срок окончания:</th>
 					<td><input bind:value={expiry} class="border rounded px-2" type="datetime-local" required min={minDate} /><br /></td>
 				</tr>
 				<tr>
-					<th>Reusable:</th>
+					<th>Многоразовый:</th>
 					<td>
 						<input type="checkbox" bind:checked={reusable} class="checkbox checkbox-sm text-base-content" />
 					</td>
 				</tr>
 				<tr>
-					<th>Ephemeral:</th>
+					<th>Перегенерируемый:</th>
 					<td>
 						<input type="checkbox" bind:checked={ephemeral} class="checkbox checkbox-sm text-base-content" />
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<button class="btn btn-sm m-3 btn-primary capitalize">Create Preauth Key</button>
+		<button class="btn btn-sm m-3 btn-primary capitalize">Создать ключ</button>
 		<button
 			on:click={() => {
 				newPreAuthKeyShow = false;
 			}}
 			type="button"
-			class="btn btn-sm m-1 btn-secondary capitalize">Cancel</button
+			class="btn btn-sm m-1 btn-secondary capitalize">Отменить</button
 		>
 	</form>
 </div>

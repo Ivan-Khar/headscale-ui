@@ -23,6 +23,6 @@
 </script>
 
 {#each device.ipAddresses as ip}
-	<button class="mb-1 mr-1 btn btn-xs btn-primary normal-case" tabindex="0" on:click|stopPropagation={() => goToIP(ip)}>{ip}</button>
+	<button class="mb-1 mr-1 btn btn-xs btn-primary normal-case" tabindex="0" on:click|stopPropagation={() => goToIP(ip)}>Открыть панель</button>
 {/each}
 

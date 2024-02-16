@@ -35,7 +35,7 @@
 
 	<span class="btn-group">
 		<button class:btn-active="{$userSortStore == 'id'}" on:click="{() => {$userSortStore = 'id'; getUsers()}}" class="btn btn-xs">ID</button>
-		<button class:btn-active="{$userSortStore == 'name'}" on:click="{() => {$userSortStore = 'name'; getUsers()}}" class="btn btn-xs capitalize">User Name</button>
-		<button class:btn-active="{$userSortStore == 'createdAt'}" on:click="{() => {$userSortStore = 'createdAt'; getUsers()}}" class="btn btn-xs capitalize">Creation Date</button>
+		<button class:btn-active="{$userSortStore == 'name'}" on:click="{() => {$userSortStore = 'name'; getUsers()}}" class="btn btn-xs capitalize">Имя пользователя</button>
+		<button class:btn-active="{$userSortStore == 'createdAt'}" on:click="{() => {$userSortStore = 'createdAt'; getUsers()}}" class="btn btn-xs capitalize">Время создания</button>
 	</span>
 </span>

@@ -35,7 +35,7 @@
 
 	<span class="btn-group">
 		<button class:btn-active="{$deviceSortStore == 'id'}" on:click="{() => {$deviceSortStore = 'id'; getDevices()}}" class="btn btn-xs">ID</button>
-		<button class:btn-active="{$deviceSortStore == 'givenName'}" on:click="{() => {$deviceSortStore = 'givenName'; getDevices()}}" class="btn btn-xs capitalize">Device Name</button>
-		<button class:btn-active="{$deviceSortStore == 'lastSeen'}" on:click="{() => {$deviceSortStore = 'lastSeen'; getDevices()}}" class="btn btn-xs capitalize">Last Seen</button>
+		<button class:btn-active="{$deviceSortStore == 'givenName'}" on:click="{() => {$deviceSortStore = 'givenName'; getDevices()}}" class="btn btn-xs normal-case">Имя устройства</button>
+		<button class:btn-active="{$deviceSortStore == 'lastSeen'}" on:click="{() => {$deviceSortStore = 'lastSeen'; getDevices()}}" class="btn btn-xs normal-case">Статус в сети</button>
 	</span>
 </span>

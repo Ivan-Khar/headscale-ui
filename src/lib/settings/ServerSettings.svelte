@@ -34,12 +34,12 @@
 </script>
 
 <form>
-	<h1 class="text-2xl bold text-primary mb-4">Server Settings</h1>
+	<h1 class="text-2xl bold text-primary mb-4">Настройки сервера</h1>
 	<label class="block text-secondary text-sm font-bold mb-2" for="url"> Headscale URL </label>
 	<input bind:value={$URLStore} class="form-input" type="url" pattern={String.raw`https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`} placeholder="https://hs.yourdomain.com.au" />
-	<p class="text-xs text-base-content text-italics mb-8">URL for your headscale server instance</p>
+	<p class="text-xs text-base-content text-italics mb-8">Ссылка на Headscale сервер</p>
 	<label class="block text-secondary text-sm font-bold mb-2" for="password">
-		Headscale API Key
+		Headscale API ключ
 		{#if apiStatus == 'succeeded'}
 			{#key $APIKeyStore}
 				<ApiKeyTimeLeft />
@@ -50,7 +50,7 @@
 		<input bind:value={$APIKeyStore} {...{ type: apiKeyInputState }} minlength="54" maxlength="54" class="form-input" disabled='{apiStatus == 'succeeded'}' required placeholder="******************" />
 		<button
 			type="button"
-			class="absolute right-40"
+			class="absolute right-56"
 			on:click={() => {
 				apiKeyInputState == 'text' ? (apiKeyInputState = 'password') : (apiKeyInputState = 'text');
 			}}
@@ -70,14 +70,14 @@
 		</button>
 		<RolloverApi {apiStatus} />
 	</div>
-	<p class="text-xs text-base-content text-italics mb-8">Generate an API key for your headscale instance and place it here.</p>
+	<p class="text-xs text-base-content text-italics mb-8">Сгенерируйте API ключ на вашем Headscale сервере и вствьте его сюда</p>
 	{#if apiStatus != 'succeeded'}
-		<button on:click={() => {TestServerSettings()}} class="btn btn-sm btn-secondary capitalize" type="button">Save API Key</button>
+		<button on:click={() => {TestServerSettings()}} class="btn btn-sm btn-secondary capitalize" type="button">Сохранить ключ</button>
 	{:else}
-		<button on:click={() => {apiStatus = 'untested'}} class="btn btn-sm btn-primary capitalize" type="button">Edit API Key</button>
+		<button on:click={() => {apiStatus = 'untested'}} class="btn btn-sm btn-primary capitalize" type="button">Изменить ключ</button>
 	{/if}
-	<button on:click={() => ClearServerSettings()} class="btn btn-sm btn-primary capitalize" type="button">Clear Server Settings</button>
-	<button on:click={() => TestServerSettings()} class="btn btn-sm btn-secondary capitalize" type="button">Test Server Settings</button>
+	<button on:click={() => ClearServerSettings()} class="btn btn-sm btn-primary capitalize" type="button">Очистить настройки сервера</button>
+	<button on:click={() => TestServerSettings()} class="btn btn-sm btn-secondary capitalize" type="button">Проверить настройки сервера</button>
 	{#if apiStatus === 'succeeded'}
 		<svg in:fly|global={{ x: 10, duration: 600 }} xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="green" stroke-width="2">
 			<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

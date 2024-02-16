@@ -43,7 +43,7 @@
 {#if componentLoaded}
 	<div in:fade|global>
 		<div in:fade|global class="px-4 pt-4">
-			<h1 class="text-2xl bold text-primary">Device View</h1>
+			<h1 class="text-2xl bold text-primary">Устройства</h1>
 		</div>
 		{#if $apiTestStore === 'succeeded'}
 			<!-- instantiate device based components -->
@@ -53,9 +53,9 @@
 						><!-- device creation visibility button -->
 						<div class="p-4">
 							{#if newDeviceCardVisible == false}
-								<button on:click={() => (newDeviceCardVisible = true)} class="btn btn-primary btn-xs capitalize" type="button">+ New Device</button>
+								<button on:click={() => (newDeviceCardVisible = true)} class="btn btn-primary btn-xs capitalize" type="button">Добавить устройство</button>
 							{:else}
-								<button on:click={() => (newDeviceCardVisible = false)} class="btn btn-secondary btn-xs capitalize" type="button">- Hide New Device</button>
+								<button on:click={() => (newDeviceCardVisible = false)} class="btn btn-secondary btn-xs capitalize" type="button">Отмена</button>
 							{/if}
 						</div></td
 					><td><SortDevices /></td><td><SearchDevices /></td></tr
@@ -72,7 +72,7 @@
 		{/if}
 		{#if $apiTestStore === 'failed'}
 			<div in:fade|global class="max-w-lg  mx-auto p-4 border-4 text-sm text-base-content shadow-lg text-center">
-				<p>API test did not succeed.<br />Headscale might be down or API settings may need to be set<br />change server settings in the <a href="{base}/settings.html" class="link link-primary">settings</a> page</p>
+				<p>API тест не был успешен.<br />Возможно Headscale сервер не в сети или API настройки не верны<br />Исправьте API значения в <a href="{base}/settings.html" class="link link-primary">этой</a> странице</p>
 			</div>
 		{/if}
 	</div>

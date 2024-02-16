@@ -33,7 +33,7 @@
 	}
 </script>
 
-<th>Device Routes</th>
+<th>Маршруты</th>
 <td
 	><ul class="list-disc list-inside">
 		{#each routesList as route, index}
