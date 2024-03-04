@@ -33,6 +33,7 @@
 	<div
 		transition:slide|global
 		class="absolute alert text-lg left-1/2 transform -translate-x-1/2 justify-center shadow-lg max-w-lg"
+		role="button" tabindex="0"
 		on:keypress on:click={() => {
 			$alertStore = '';
 		}}

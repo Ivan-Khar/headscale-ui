@@ -66,7 +66,7 @@
 				on:keypress on:click={() => {
 					$preAuthHideStore = !$preAuthHideStore
 				}}
-				class="font-normal ml-2">Спрятать использованные ключи</span
+				class="font-normal ml-2" role="button" tabindex="0">Спрятать использованные ключи</span
 			>
 		</div>
 	</th>
@@ -98,7 +98,7 @@
 									<div class="btn btn-xs capitalize bg-secondary text-secondary-content mx-1">многоразовый</div>
 								{/if}
 								{#if key.ephemeral && key.id != ''}
-									<div class="btn btn-xs capitalize bg-accent text-accent-content mx-1">недолговечный</div>
+									<div class="btn btn-xs capitalize bg-accent text-accent-content mx-1">эфемерный</div>
 								{/if}
 							</td>
 							<td>

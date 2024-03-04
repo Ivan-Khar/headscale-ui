@@ -7,6 +7,7 @@
 	import RemoveDevice from './DeviceCard/RemoveDevice.svelte';
 	import RenameDevice from './DeviceCard/RenameDevice.svelte';
 	import DeviceIPs from './DeviceCard/DeviceIPs.svelte';
+	import UserInfo from './DeviceCard/UserInfo.svelte';
 
 	export let device = new Device();
 	let cardExpanded = false;
@@ -63,6 +64,7 @@
 			<RenameDevice bind:cardEditing {device} />
 		</span>
 		<div class="grow min-w-fit w-1/2"><DeviceIPs {device} /></div>
+		<div class="grow min-w-fit"><UserInfo {device} /></div>
 		<div class="grow w-full"><DeviceTags {device} /></div>
 		<div class="grow min-w-fit">
 			<RemoveDevice {device} />

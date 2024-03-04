@@ -12,7 +12,7 @@
 </script>
 
 <div in:fade|global class="card-primary">
-	<div on:keypress on:click={() => (cardExpanded = !cardExpanded)} class="flex justify-between">
+	<div on:keypress on:click={() => (cardExpanded = !cardExpanded)} class="flex justify-between" role="button" tabindex="0">
 		<div>
 			<EditUser {user} />
 		</div>

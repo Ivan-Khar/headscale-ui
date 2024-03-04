@@ -51,7 +51,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th>Перегенерируемый:</th>
+					<th>Эфемерный:</th>
 					<td>
 						<input type="checkbox" bind:checked={ephemeral} class="checkbox checkbox-sm text-base-content" />
 					</td>
